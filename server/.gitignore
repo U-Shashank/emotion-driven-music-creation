@@ -14,3 +14,5 @@ storage/frames/*.jpeg
 !storage/frames/.gitkeep
 
 .env
+
+best_model.pth

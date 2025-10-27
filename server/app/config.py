@@ -2,6 +2,9 @@
 import os
 from pathlib import Path
 from typing import List
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Settings:
     """Application settings"""
@@ -23,7 +26,7 @@ class Settings:
     DATA_DIR: Path = BASE_DIR / "data"
     
     # Model settings
-    MODEL_TYPE: str = os.getenv("MODEL_TYPE", "deepface")
+    MODEL_TYPE: str = os.getenv("MODEL_TYPE", "custom")
     CONFIDENCE_THRESHOLD: float = float(os.getenv("CONFIDENCE_THRESHOLD", "0.6"))
     DETECTION_INTERVAL: int = int(os.getenv("DETECTION_INTERVAL", "30"))
     
@@ -34,6 +37,10 @@ class Settings:
     
     # Storage
     SAVE_FRAMES: bool = os.getenv("SAVE_FRAMES", "false").lower() == "true"
+
+    # Image Enhancement
+    USE_CLAHE: bool = os.getenv("USE_CLAHE", "false").lower() == "true"
+    USE_SHARPENING: bool = os.getenv("USE_SHARPENING", "false").lower() == "true"
     
     def __init__(self):
         """Initialize settings and create directories"""
