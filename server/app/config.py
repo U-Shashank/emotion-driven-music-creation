@@ -26,7 +26,7 @@ class Settings:
     DATA_DIR: Path = BASE_DIR / "data"
     
     # Model settings
-    MODEL_TYPE: str = os.getenv("MODEL_TYPE", "custom")
+    MODEL_TYPE: str = os.getenv("MODEL_TYPE", "deepface")
     CONFIDENCE_THRESHOLD: float = float(os.getenv("CONFIDENCE_THRESHOLD", "0.6"))
     DETECTION_INTERVAL: int = int(os.getenv("DETECTION_INTERVAL", "30"))
     
